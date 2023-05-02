@@ -5,6 +5,7 @@ import { NativeBaseProvider } from 'native-base';
 import { Loading } from '@components/Loading';
 import { THEME } from './src/theme';
 import { SignIn } from '@screens/SignIn';
+import { SignUp } from '@screens/SignUp';
 
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <NativeBaseProvider theme={THEME}>
       {fontsLoaded ? 
-      <SignIn/>: <Loading/>
+      <SignUp/>: <Loading/>
       }
 
       <StatusBar barStyle="light-content"
