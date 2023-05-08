@@ -3,13 +3,25 @@ import BackgroundImg from "@assets/background.png";
 import LogoSvg from "@assets/logo.svg";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
+import { useNavigation } from "@react-navigation/native";
+
 
 export function SignIn() {
+
+  const navigation = useNavigation();
+
+
+  function handleGoBack() {
+    navigation.goBack();
+  }
+
+
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}} showsVerticalScrollIndicator={false}> 
-    <VStack flex={1} bg="gray.700" px={6}>
+    <VStack flex={1} px={6}>
       <Image
         source={BackgroundImg}
+        defaultSource={BackgroundImg}
         alt="Background"
         resizeMode="contain"
         position="absolute"
@@ -43,7 +55,11 @@ export function SignIn() {
         <Text color="gray.50" fontSize={{ base: "xs", md: "sm" }} mb={3}>
           Ainda não tem acesso ?
         </Text>
-        <Button title="Criar conta" variant="outline" />
+        <Button
+          title="Criar conta"
+          variant="outline" 
+          onPress={handleGoBack}
+          />
       </Center>
     </VStack>
 </ScrollView>
