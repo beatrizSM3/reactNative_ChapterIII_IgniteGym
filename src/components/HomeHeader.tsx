@@ -8,7 +8,7 @@ type HeaderProps = {
     userName: string
 }
 
-export function Header({userName}: HeaderProps) {
+export function HomeHeader({userName}: HeaderProps) {
     return (
         <HStack bg="gray.600" pt={{base: "8", md: "16"}} pb="5" px="8" alignItems="center" justifyContent="space-between">
             <HStack>
